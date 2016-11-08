@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vlan:</strong>
+  <%= @network.VLAN_id %>
+</p>
+
+<p>
+  <strong>Net address:</strong>
+  <%= @network.net_address %>
+</p>
+
+<p>
+  <strong>Subnet mask:</strong>
+  <%= @network.subnet_mask %>
+</p>
+
+<p>
+  <strong>Network bits:</strong>
+  <%= @network.network_bits %>
+</p>
+
+<p>
+  <strong>Node start:</strong>
+  <%= @network.node_start %>
+</p>
+
+<p>
+  <strong>Node end:</strong>
+  <%= @network.node_end %>
+</p>
+
+<p>
+  <strong>Nodes:</strong>
+  <%= @network.nodes %>
+</p>
+
+<p>
+  <strong>Broadcast address:</strong>
+  <%= @network.broadcast_address %>
+</p>
+
+<%= link_to 'Edit', edit_network_path(@network) %> |
+<%= link_to 'Back', networks_path %>

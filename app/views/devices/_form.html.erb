@@ -1,0 +1,36 @@
+<%= form_for @device do |f| %>
+ 
+  <% if @device.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@device.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @device.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :device_type %><br>
+    <%= f.text_field :device_type %>
+  </p>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :desc %><br>
+    <%= f.text_area :desc %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+ 
+<% end %>

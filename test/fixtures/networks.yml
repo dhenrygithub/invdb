@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  VLAN_id: 1
+  net_address: 
+  subnet_mask: 
+  network_bits: 1
+  node_start: 
+  node_end: 
+  nodes: 1
+  broadcast_address: 
+
+two:
+  VLAN_id: 1
+  net_address: 
+  subnet_mask: 
+  network_bits: 1
+  node_start: 
+  node_end: 
+  nodes: 1
+  broadcast_address: 

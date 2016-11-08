@@ -1,0 +1,2 @@
+class WarrantiesController < ApplicationController
+end

@@ -1,0 +1,13 @@
+<h1>Welcome#test</h1>
+<p>Find me in app/views/welcome/test.html.erb</p>
+
+<%= "test message:
+#{@controller_message}"%>
+
+<%= link_to("Go to Index", 
+    {:controller => 'welcome',
+     :action => 'index',
+     :id => 5,
+     :random => "this is a test"
+    }) 
+%>

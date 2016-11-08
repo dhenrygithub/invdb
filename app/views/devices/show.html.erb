@@ -1,0 +1,26 @@
+<h1>Device [id:<%= @device.id %>]</h1>
+<h2>
+  <strong>Type:</strong>
+  <%= @device.device_type %>
+</h2>
+ 
+<h2>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</h2>
+
+<h2>
+  <strong>Description:</strong>
+  <%= @device.desc %>
+</h2>
+
+<h2>sfw:</h2>
+<%= render @device.software_licenses %>
+
+<h2>Add sfw:</h2>
+<%= render 'software_licenses/form' %>
+
+<%= link_to 'Add SFW', new_software_license_path(@device) %>
+<%= link_to 'Edit', edit_device_path(@device) %>
+<br>
+<%= link_to 'back to listing', devices_path %>

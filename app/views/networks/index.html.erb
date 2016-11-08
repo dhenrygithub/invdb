@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Networks</h1>
+
+<table border=1>
+  <thead>
+    <tr>
+      <th>Vlan</th>
+      <th>Net address</th>
+      <th>Subnet mask</th>
+      <th>Network bits</th>
+      <th>Node start</th>
+      <th>Node end</th>
+      <th>Nodes</th>
+      <th>Broadcast address</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @networks.each do |network| %>
+      <tr  class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= network.VLAN_id %></td>
+        <td><%= network.net_address %></td>
+        <td><%= network.subnet_mask %></td>
+        <td><%= network.network_bits %></td>
+        <td><%= network.node_start %></td>
+        <td><%= network.node_end %></td>
+        <td><%= network.nodes %></td>
+        <td><%= network.broadcast_address %></td>
+        <td><%= link_to 'Show', network %></td>
+        <td><%= link_to 'Edit', edit_network_path(network) %></td>
+        <td><%= link_to 'Destroy', network, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Network', new_network_path %>

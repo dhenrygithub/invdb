@@ -1,0 +1,31 @@
+<h1>Listing devices</h1>
+
+<strong>||<%= link_to 'add device', new_device_path %>||</strong> Showing <strong><%= @devices.count %></strong> devices<br>
+<table border=1>
+  <thead>
+    <tr>
+      <th>Record #</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @devices.each do |device| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= device.id %></td>
+        <td><%= device.device_type %></td>
+        <td><%= device.name %></td>
+        <td><%= device.desc %></td>
+        <td><%= link_to 'View', device_path(device) %></td>
+        <td><%= link_to 'Edit', edit_device_path(device) %></td>
+        <td><%= link_to 'Del', device_path(device), method: :delete,
+                data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

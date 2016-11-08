@@ -1,0 +1,57 @@
+<%= form_for(network) do |f| %>
+  <% if network.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(network.errors.count, "error") %> prohibited this network from being saved:</h2>
+
+      <ul>
+      <% network.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :VLAN_id %>
+    <%= f.number_field :VLAN_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :net_address %>
+    <%= f.text_field :net_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :subnet_mask %>
+    <%= f.text_field :subnet_mask %>
+  </div>
+
+  <div class="field">
+    <%= f.label :network_bits %>
+    <%= f.number_field :network_bits %>
+  </div>
+
+  <div class="field">
+    <%= f.label :node_start %>
+    <%= f.text_field :node_start %>
+  </div>
+
+  <div class="field">
+    <%= f.label :node_end %>
+    <%= f.text_field :node_end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nodes %>
+    <%= f.number_field :nodes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :broadcast_address %>
+    <%= f.text_field :broadcast_address %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

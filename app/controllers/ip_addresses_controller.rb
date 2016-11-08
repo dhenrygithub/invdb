@@ -1,0 +1,2 @@
+class IpAddressesController < ApplicationController
+end

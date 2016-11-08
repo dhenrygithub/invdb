@@ -1,0 +1,10 @@
+ruby -v
+
+rails --version
+
+To update rails
+
+1. gem update rails --no-ri --no-rdoc
+2. bundle install
+3. bundle update
+

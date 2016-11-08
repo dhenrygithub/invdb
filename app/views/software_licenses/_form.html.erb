@@ -1,0 +1,17 @@
+<%= form_for([@device, @device.software_licenses.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>  
+  <p>
+    <%= f.label :manufacturer %><br>
+    <%= f.text_field :manufacturer %>
+  </p>
+  <p>
+    <%= f.label :version %><br>
+    <%= f.text_field :version %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

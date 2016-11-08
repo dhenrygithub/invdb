@@ -1,0 +1,33 @@
+<h1>Listing licenses</h1>
+
+<strong>||<%= link_to 'add license', new_software_license_path %>||</strong> Showing <strong><%= @software_licenses.count %></strong> licenses<br>
+<table border=1>
+  <thead>
+    <tr>
+      <th>Record #</th>
+      <th>Name</th>
+      <th>Manufacturer</th>
+      <th>Version</th>
+      <th>Serial</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <% @software_licenses.each do |license| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td><%= license.id %></td>
+        <td><%= license.name %></td>
+        <td><%= license.manufacturer %></td>
+        <td><%= license.version %></td>
+        <td><%= license.serial %></td>
+        <td><%= link_to 'View', software_license_path(license) %></td>
+        <td><%= link_to 'Edit', edit_software_license_path(license) %></td>
+        <td><% @device = Device.find(license.device_id) %><%= link_to 'Del', software_license_path(license.id), method: :delete,
+                 data: { confirm: 'Are you sure?' } %> <%=  " for device: #{license.device_id}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

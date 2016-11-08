@@ -1,0 +1,6 @@
+startup:
+1. mysql-ctl start
+2. mysql -u invdbadmin -p
+... password
+> use invdb_development
+> show tables
